@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import MateriasModal from "../components/modals/MateriasModal";
 
@@ -37,7 +37,7 @@ const Materias = () => {
                 <div>
                     <h1 className="text-4xl text-center font-semibold">Gestión de Materias</h1>
                 </div>
-                <div className="cursor-pointer px-4 py-2 my-5 border-2 border-dashed bg-gray-500" onClick={() => setModalMate(true)}>
+                <div className="cursor-pointer px-4 py-2 my-5 border-2 border-dashed bg-gray-500 rounded-lg" onClick={() => setModalMate(true)}>
                     <h1 className="">Ingresar materia</h1>
                 </div>
                 <table className="table-auto border-collapse border rounded-md w-1/2 mb-3">

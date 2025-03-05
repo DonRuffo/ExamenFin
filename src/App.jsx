@@ -7,6 +7,7 @@ import Matriculas from './pages/Matriculas'
 import Bienvenido from './pages/Bienvenida'
 import Estudiantes from './pages/Estudiantes'
 import { AuthProvider } from './context/AuthContext'
+import LandingPage from './pages/LandingPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path='/' >
+            <Route index element={<LandingPage />} />
             <Route path='login' element={<Login />} />
           </Route>
           <Route path='dashboard/*' element={

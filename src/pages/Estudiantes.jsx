@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import EstudiantesModal from "../components/modals/EstudiantesModal";
 
@@ -36,7 +36,7 @@ const Estudiantes = () => {
                 <div>
                     <h1 className="text-4xl text-center font-semibold">Gestión de Estudiantes</h1>
                 </div>
-                <div className="cursor-pointer px-4 py-2 my-5 border-2 border-dashed bg-gray-500" onClick={() => { setModalEst(true) }}>
+                <div className="cursor-pointer px-4 py-2 my-5 border-2 border-dashed bg-gray-500 rounded-lg" onClick={() => { setModalEst(true) }}>
                     <h1 className="">Ingresar estudiante</h1>
                 </div>
                 <table className="table-auto border-collapse border rounded-md w-1/2 mb-3">

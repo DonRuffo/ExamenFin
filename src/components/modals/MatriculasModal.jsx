@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const MatriculasModal = () =>{
     const {modalMatri, setModalMatri} = useContext(AuthContext)
@@ -24,9 +25,10 @@ const MatriculasModal = () =>{
                 }
             }
             const respuesta = await axios.post(url, form, options)
+            toast.success(respuesta.data.msg)
         } catch (error) {
             console.log(error);
-            
+            toast.error(error.response.data.msg)
         }
     }
 

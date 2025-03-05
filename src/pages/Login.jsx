@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
 
@@ -15,8 +16,10 @@ const Login = () => {
         try {
             const respuesta = await axios.post(url, form)
             localStorage.setItem('token', respuesta.data.token)
+            toast.success(respuesta.data.msg)
         } catch (error) {
             console.log(error)
+            toast.error(error.response.data.msg)
         }
     }
 
@@ -28,6 +31,7 @@ const Login = () => {
     }
     return (
             <div className="flex justify-center">
+                <ToastContainer />
                 <div className="w-1/2 rounded-md outline outline-green-200 shadow-xl flex flex-col">
                     <h1 className="text-center text-3xl py-5 font-semibold">Sistema de Matrículas</h1>
                     <div>
